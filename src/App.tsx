@@ -41,21 +41,20 @@ function App() {
         </Layout.Header>
         <Menu mode={"horizontal"} className={styles["main-menu"]}>
           <Menu.Item key={1}>Home</Menu.Item>
-          <Menu.Item key={2}>Weekend trip</Menu.Item>
-          <Menu.Item key={3}>Group Trip</Menu.Item>
-          <Menu.Item key="4">Solo Trip</Menu.Item>
-          <Menu.Item key="5">Family Trip</Menu.Item>
+          <Menu.Item key={2}>Weekend travel</Menu.Item>
+          <Menu.Item key={3}>Group travel</Menu.Item>
+          <Menu.Item key="4">Solo travel</Menu.Item>
+          <Menu.Item key="5">Family travel</Menu.Item>
           <Menu.Item key="6">Cruise</Menu.Item>
           <Menu.Item key="7">Hotel & Attraction</Menu.Item>
-          <Menu.Item key="8">Local Trip</Menu.Item>
-          <Menu.Item key="9"> 主题游 </Menu.Item>
-          <Menu.Item key="10"> 定制游 </Menu.Item>
-          <Menu.Item key="11"> 游学 </Menu.Item>
-          <Menu.Item key="12"> 签证 </Menu.Item>
-          <Menu.Item key="13"> 企业游 </Menu.Item>
-          <Menu.Item key="14"> 高端游 </Menu.Item>
-          <Menu.Item key="15"> 爱玩户外 </Menu.Item>
-          <Menu.Item key="16"> 保险 </Menu.Item>
+          <Menu.Item key="8">Local travel</Menu.Item>
+          <Menu.Item key="9">Theme tour</Menu.Item>
+          <Menu.Item key="10">Customized tour</Menu.Item>
+          <Menu.Item key="11">Study Tour</Menu.Item>
+          <Menu.Item key="12">Visa</Menu.Item>
+          <Menu.Item key="13">Corporate travel</Menu.Item>
+          <Menu.Item key="14">High-end travel</Menu.Item>
+
         </Menu>
       </div>
       <Layout.Footer>
