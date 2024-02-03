@@ -8,7 +8,6 @@ function App() {
   return (
     <div className={styles.App}>
       <div className={styles["app-header"]}>
-        {/* top-header */}
         <div className={styles["top-header"]}>
           <div className={styles.inner}>
             <Typography.Text>Travel Makes Happiness</Typography.Text>
@@ -61,7 +60,7 @@ function App() {
       </div>
       <Layout.Footer>
         <Typography.Title level={3} style={{ textAlign: 'center' }}>
-          版权所有 @ Xiecheng Travel
+          Copyright @ Xiecheng Travel
         </Typography.Title>
       </Layout.Footer>
     </div>
