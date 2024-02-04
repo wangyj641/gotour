@@ -3,8 +3,11 @@ import styles from './Header.module.css'
 import logo from '../../assets/logo.svg';
 import { Layout, Typography, Input, Menu, Button, Dropdown } from "antd";
 import { GlobalOutlined } from "@ant-design/icons";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 
 export function Header() {
+  const navigate = useNavigate();
+
   return (
     <div className={styles["app-header"]}>
       <div className={styles["top-header"]}>
@@ -23,16 +26,18 @@ export function Header() {
             Language
           </Dropdown.Button>
           <Button.Group className={styles["button-group"]}>
-            <Button>Register</Button>
-            <Button>Login</Button>
+            <Button onClick={() => navigate("register")}>注册</Button>
+            <Button onClick={() => navigate("signIn")}>登陆</Button>
           </Button.Group>
         </div>
       </div>
       <Layout.Header className={styles["main-header"]}>
-        <img src={logo} alt="logo" className={styles["App-logo"]} />
-        <Typography.Title level={3} className={styles.title}>
-          XIECHENG TRAVEL
-        </Typography.Title>
+        <span onClick={() => navigate("/")}>
+          <img src={logo} alt="logo" className={styles["App-logo"]} />
+          <Typography.Title level={3} className={styles.title}>
+            XIECHENG Travel
+          </Typography.Title>
+        </span>
         <Input.Search
           placeholder={"Input destination, hotel, or attraction"}
           className={styles["search-input"]}
