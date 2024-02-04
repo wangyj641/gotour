@@ -40,10 +40,10 @@ export function Header() {
       </Layout.Header>
       <Menu mode={"horizontal"} className={styles["main-menu"]}>
         <Menu.Item key={1}>Home</Menu.Item>
-        <Menu.Item key={2}>Weekend travel</Menu.Item>
-        <Menu.Item key={3}>Group travel</Menu.Item>
-        <Menu.Item key="4">Solo travel</Menu.Item>
-        <Menu.Item key="5">Family travel</Menu.Item>
+        <Menu.Item key={2}>Weekend Travel</Menu.Item>
+        <Menu.Item key={3}>Group Travel</Menu.Item>
+        <Menu.Item key="4">Solo Travel</Menu.Item>
+        <Menu.Item key="5">Family Travel</Menu.Item>
         <Menu.Item key="6">Cruise</Menu.Item>
         <Menu.Item key="7">Hotel & Attraction</Menu.Item>
         <Menu.Item key="8">Local Travel</Menu.Item>
