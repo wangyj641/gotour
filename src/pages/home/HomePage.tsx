@@ -6,9 +6,12 @@ import { productList1, productList2, productList3 } from "./mockups";
 import sideImage from '../../assets/images/sider_2019_12-09.png';
 import sideImage2 from '../../assets/images/sider_2019_02-04.png';
 import sideImage3 from '../../assets/images/sider_2019_02-04-2.png';
+import { withTranslation, WithTranslation } from "react-i18next";
 
-export class HomePage extends React.Component {
+class HomePageComponent extends React.Component<WithTranslation> {
   render() {
+    // console.log(this.props.t)
+    const { t } = this.props;
     return (
       <>
         <Header />
@@ -24,7 +27,7 @@ export class HomePage extends React.Component {
           <ProductCollection
             title={
               <Typography.Title level={3} type="warning">
-                Most recommended
+                {t("home_page.hot_recommended")}
               </Typography.Title>
             }
             sideImage={sideImage}
@@ -33,7 +36,7 @@ export class HomePage extends React.Component {
           <ProductCollection
             title={
               <Typography.Title level={3} type="danger">
-                Latest
+                {t("home_page.new_arrival")}
               </Typography.Title>
             }
             sideImage={sideImage2}
@@ -42,7 +45,7 @@ export class HomePage extends React.Component {
           <ProductCollection
             title={
               <Typography.Title level={3} type="success">
-                Domestic
+                {t("home_page.domestic_travel")}
               </Typography.Title>
             }
             sideImage={sideImage3}
@@ -52,6 +55,8 @@ export class HomePage extends React.Component {
         </div>
         <Footer />
       </>
-    )
+    );
   }
 }
+
+export const HomePage = withTranslation()(HomePageComponent)
