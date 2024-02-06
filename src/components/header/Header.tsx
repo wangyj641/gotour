@@ -16,8 +16,8 @@ import { useTranslation } from "react-i18next";
 
 export function Header() {
   const navigate = useNavigate();
-  const language = useSelector((state) => state.language);
-  const languageList = useSelector((state) => state.languageList);
+  const language = useSelector((state) => state.language.language);
+  const languageList = useSelector((state) => state.language.languageList);
   //const dispatch = useDispatch();
   const dispatch = useDispatch<Dispatch<LanguageActionTypes>>();
   const { t } = useTranslation();
