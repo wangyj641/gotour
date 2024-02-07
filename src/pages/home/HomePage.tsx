@@ -16,6 +16,7 @@ import { withTranslation, WithTranslation } from "react-i18next";
 import { connect } from "react-redux";
 import { RootState } from "../../redux/store";
 import { giveMeDataActionCreator } from "../../redux/recommendProducts/recommendProductsActions";
+import { productList1, productList2, productList3 } from "./mockups";
 
 const mapStateToProps = (state: RootState) => {
   return {
@@ -28,7 +29,8 @@ const mapStateToProps = (state: RootState) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     giveMeData: () => {
-      dispatch(giveMeDataActionCreator());
+      // use fake data
+      //dispatch(giveMeDataActionCreator());
     }
   };
 };
@@ -39,34 +41,34 @@ type PropsType = WithTranslation &
 
 class HomePageComponent extends React.Component<PropsType> {
   componentDidMount() {
-    // TODO: there is bug here
     this.props.giveMeData();
   }
 
   render() {
     // console.log(this.props.t)
     const { t, productList, loading, error } = this.props;
-    if (loading) {
-      return (
-        <Spin
-          size="large"
-          style={{
-            marginTop: 200,
-            marginBottom: 200,
-            marginLeft: "auto",
-            marginRight: "auto",
-            width: "100%",
-          }}
-        />
-      );
-    }
+
+    // use fake data
+    // if (loading) {
+    //   return (
+    //     <Spin
+    //       size="large"
+    //       style={{
+    //         marginTop: 200,
+    //         marginBottom: 200,
+    //         marginLeft: "auto",
+    //         marginRight: "auto",
+    //         width: "100%",
+    //       }}
+    //     />
+    //   );
+    // }
     if (error) {
       return <div>web site error{error}</div>;
     }
     return (
       <>
         <Header />
-        {/* bbb content */}
         <div className={styles["page-content"]}>
           <Row style={{ marginTop: 20 }}>
             <Col span={6}>
@@ -83,7 +85,7 @@ class HomePageComponent extends React.Component<PropsType> {
               </Typography.Title>
             }
             sideImage={sideImage}
-            products={productList[0].touristRoutes}
+            products={productList1}
           />
           <ProductCollection
             title={
@@ -92,7 +94,7 @@ class HomePageComponent extends React.Component<PropsType> {
               </Typography.Title>
             }
             sideImage={sideImage2}
-            products={productList[1].touristRoutes}
+            products={productList2}
           />
           <ProductCollection
             title={
@@ -101,7 +103,8 @@ class HomePageComponent extends React.Component<PropsType> {
               </Typography.Title>
             }
             sideImage={sideImage3}
-            products={productList[2].touristRoutes}
+            // use fake data
+            products={productList3}
           />
           <BusinessPartners />
         </div>
