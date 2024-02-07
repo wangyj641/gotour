@@ -60,9 +60,7 @@ export const giveMeDataActionCreator =
   async (dispatch, getState) => {
     dispatch(fetchRecommendProductStartActionCreator());
     try {
-      const { data } = await axios.get(
-        "http://123.56.149.216:8080/api/productCollections"
-      );
+      const { data } = await axios.get("/productList");
       dispatch(fetchRecommendProductSuccessActionCreator(data));
     } catch (error) {
       dispatch(fetchRecommendProductFailActionCreator(error));

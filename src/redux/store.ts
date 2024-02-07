@@ -14,7 +14,6 @@ const rootReducer = combineReducers({
 
 const store = configureStore({
   reducer: rootReducer,
-  middleware: () => new Tuple(actionLog),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

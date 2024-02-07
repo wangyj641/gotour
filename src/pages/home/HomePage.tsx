@@ -16,7 +16,6 @@ import { withTranslation, WithTranslation } from "react-i18next";
 import { connect } from "react-redux";
 import { RootState } from "../../redux/store";
 import { giveMeDataActionCreator } from "../../redux/recommendProducts/recommendProductsActions";
-import { productList1, productList2, productList3 } from "./mockups";
 
 const mapStateToProps = (state: RootState) => {
   return {
@@ -29,8 +28,7 @@ const mapStateToProps = (state: RootState) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     giveMeData: () => {
-      // use fake data
-      //dispatch(giveMeDataActionCreator());
+      dispatch(giveMeDataActionCreator());
     }
   };
 };
@@ -48,21 +46,20 @@ class HomePageComponent extends React.Component<PropsType> {
     // console.log(this.props.t)
     const { t, productList, loading, error } = this.props;
 
-    // use fake data
-    // if (loading) {
-    //   return (
-    //     <Spin
-    //       size="large"
-    //       style={{
-    //         marginTop: 200,
-    //         marginBottom: 200,
-    //         marginLeft: "auto",
-    //         marginRight: "auto",
-    //         width: "100%",
-    //       }}
-    //     />
-    //   );
-    // }
+    if (loading) {
+      return (
+        <Spin
+          size="large"
+          style={{
+            marginTop: 200,
+            marginBottom: 200,
+            marginLeft: "auto",
+            marginRight: "auto",
+            width: "100%",
+          }}
+        />
+      );
+    }
     if (error) {
       return <div>web site error{error}</div>;
     }
@@ -85,7 +82,7 @@ class HomePageComponent extends React.Component<PropsType> {
               </Typography.Title>
             }
             sideImage={sideImage}
-            products={productList1}
+            products={productList[0]}
           />
           <ProductCollection
             title={
@@ -94,7 +91,7 @@ class HomePageComponent extends React.Component<PropsType> {
               </Typography.Title>
             }
             sideImage={sideImage2}
-            products={productList2}
+            products={productList[1]}
           />
           <ProductCollection
             title={
@@ -103,8 +100,7 @@ class HomePageComponent extends React.Component<PropsType> {
               </Typography.Title>
             }
             sideImage={sideImage3}
-            // use fake data
-            products={productList3}
+            products={productList[2]}
           />
           <BusinessPartners />
         </div>
