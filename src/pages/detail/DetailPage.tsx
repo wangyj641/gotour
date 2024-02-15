@@ -68,7 +68,7 @@ export const DetailPage: React.FC = () => {
               points={product.points}
               discount={product.price}
               rating={product.rating}
-              pictures={product.pictures}
+              pictures={product.pictures.map((p) => p.url)}
             />
           </Col>
           <Col span={11}>
