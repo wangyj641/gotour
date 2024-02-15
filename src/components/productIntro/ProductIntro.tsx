@@ -12,8 +12,7 @@ interface PropsType {
     pictures: string[];
 }
 
-
-const ProductIntro: React.FC<PropsType> = ({
+export const ProductIntro: React.FC<PropsType> = ({
     title,
     shortDescription,
     price,
@@ -23,7 +22,7 @@ const ProductIntro: React.FC<PropsType> = ({
     rating,
     pictures,
 }) => {
-    return <div className={styles["intro-container"]}></div>
+    return (
+        <div className={styles["intro-container"]}></div>
+    )
 }
-
-export default ProductIntro

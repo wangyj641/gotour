@@ -5,7 +5,7 @@ import { Row, Col, Typography, Spin, DatePicker } from "antd";
 import {
   Header,
   Footer,
-  ProductIntro
+  ProductIntro,
 } from "../../components";
 import styles from "./DetailPage.module.css";
 
@@ -25,13 +25,11 @@ export const DetailPage: React.FC = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        // TODO: unable to get data 
-        const { data } = await axios.get(
-          `https://localhost:44360/api/touristroutes/${touristRouteId}`
-        );
+        const { data } = await axios.get('product');
+        console.log(data);
         setProduct(data);
       } catch (err: any) {
-        //setError(err.message);
+        setError(err.message);
       }
       setLoading(false);
     };
@@ -62,25 +60,28 @@ export const DetailPage: React.FC = () => {
       <div className={styles["page-intro-container"]}>
         <Row>
           <Col span={13}>
-            <ProductIntro />
+            <ProductIntro
+              title={product.title}
+              shortDescription={product.description}
+              price={product.originalPrice}
+              coupons={product.coupons}
+              points={product.points}
+              discount={product.price}
+              rating={product.rating}
+              pictures={product.pictures}
+            />
           </Col>
           <Col span={11}>
             <RangePicker open style={{ marginTop: 20 }} />
           </Col>
         </Row>
-
-
-
-
-
       </div>
-      <div className={styles["page-detail-anchor"]}></div>
-      <div id='feature' className={styles["page-detail-container"]}></div>
-      <div id='fees' className={styles["page-detail-container"]}></div>
-      <div id='notes' className={styles["page-detail-container"]}></div>
-      <div id='comments' className={styles["page-detail-container"]}></div>
+      <div className={styles["product-detail-anchor"]}></div>
+      <div id="feature" className={styles["product-detail-container"]}></div>
+      <div id="fees" className={styles["product-detail-container"]}></div>
+      <div id="notes" className={styles["product-detail-container"]}></div>
+      <div id="comments" className={styles["product-detail-container"]}></div>
     </div>
     <Footer />
   </>
 };
-

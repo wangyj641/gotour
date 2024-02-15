@@ -278,5 +278,24 @@
         ]
       }
     ]
-  ]
+  ],
+
+  "product": {
+    "id": 1,
+    "title": "埃及阿斯旺+卢克索+红海Red Sea+开罗+亚历山大12日跟团游(5钻)·【官方旗舰明星纯玩团】25人封顶|含签证小费全程餐|3晚尼罗河游轮+3晚红海全包度假村+1晚底比斯古都|升级内陆飞机|优质中文导游队伍|七大神庙+赠项目",
+    "shortDescription": "ssssssssss",
+    "originalPrice": "13990",
+    "coupons": "100",
+    "points": "100",
+    "price": "11990",
+    "rating": "4.5",
+    "pictures": [
+      {
+        "url": "https://m.tuniucdn.com/fb2/t1/G4/M00/E9/77/Cii-VV0-qlKISJA8ACj4cy7yO6EAAIZ3QOWdiMAKPiL261_w450_h300_c1_t0.JPG"
+      },
+      {
+        "url": "https://m.tuniucdn.com/fb2/t1/G5/M00/D0/82/Cii-tF0-qtKIdBHTAB8nBy1tWHYAAYHeQKHbsEAHycf215_w450_h300_c1_t0.JPG"
+      }
+    ]
+  }
 }
