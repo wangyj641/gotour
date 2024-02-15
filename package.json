@@ -53,6 +53,7 @@
     ]
   },
   "devDependencies": {
+    "@ant-design/compatible": "^5.1.2",
     "@types/react-redux": "^7.1.33",
     "typescript-plugin-css-modules": "^5.0.2"
   }
