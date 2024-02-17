@@ -19,7 +19,7 @@ interface MatchParams {
   touristRouteId: string;
 }
 
-export const DetailPage: React.FC = () => {
+export const DetailPage: React.FC = (MatchParams) => {
   const { touristRouteId } = useParams();
 
   const loading = useSelector((state) => state.productDetail.loading);
