@@ -1,10 +1,8 @@
-import { combineReducers } from "redux";
 import languageReducer from "./language/languageReducer";
 import recommendProductsReducer from "./recommendProducts/recommendProductsReducer";
 import { actionLog } from "./middlewares/actionLog";
 import { productDetailSlice } from "./productDetail/slice";
-import { configureStore } from "@reduxjs/toolkit";
-import { buildGetDefaultMiddleware } from "@reduxjs/toolkit/dist/getDefaultMiddleware";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 const rootReducer = combineReducers({
   language: languageReducer,
@@ -14,10 +12,6 @@ const rootReducer = combineReducers({
 
 const store = configureStore({
   reducer: rootReducer,
-  middleware: (buildGetDefaultMiddleware) => [
-    ...buildGetDefaultMiddleware(),
-    actionLog,
-  ],
   devTools: true,
 });
 
