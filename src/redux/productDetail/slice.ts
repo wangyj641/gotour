@@ -40,10 +40,6 @@ export const productDetailSlice = createSlice({
       .addCase(getProductDetail.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
-      })
-
-      .addDefaultCase((state, action) => {
-        console.log("Unhandled action type: ", action.type);
       });
   },
 });

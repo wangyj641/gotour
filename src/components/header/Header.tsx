@@ -69,6 +69,7 @@ export function Header() {
         <Input.Search
           placeholder={"Input destination, hotel, or attraction"}
           className={styles["search-input"]}
+          onSearch={(keywords) => navigate("/search/" + keywords)}
         />
       </Layout.Header>
       <Menu mode={"horizontal"} className={styles["main-menu"]}>
