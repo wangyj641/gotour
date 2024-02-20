@@ -1,4 +1,3 @@
-import React, { Fragment } from "react";
 import { FilterTag } from "./FilterTag";
 import { Typography, Divider } from "antd";
 const { Text } = Typography;

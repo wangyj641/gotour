@@ -15,9 +15,9 @@ export const SearchPage: React.FC = () => {
   const { keywords } = useParams();
 
   const loading = useSelector((state) => state.productSearch.loading);
-  const error = useSelector((s) => s.productSearch.error);
-  const pagination = useSelector((s) => s.productSearch.pagination);
-  const productList = useSelector((s) => s.productSearch.data);
+  const error = useSelector((state) => state.productSearch.error);
+  const pagination = useSelector((state) => state.productSearch.pagination);
+  const productList = useSelector((state) => state.productSearch.data);
 
   const dispatch = useDispatch<any>();
   const location = useLocation();

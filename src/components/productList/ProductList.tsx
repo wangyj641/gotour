@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { List, Rate, Space, Image, Tag, Typography } from "antd";
-import { MessageOutlined, LikeOutlined, StarOutlined } from "@ant-design/icons";
+import { LikeOutlined, StarOutlined } from "@ant-design/icons";
 
 const { Text } = Typography;
 

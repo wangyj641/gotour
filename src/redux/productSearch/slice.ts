@@ -18,16 +18,16 @@ const initialState: ProductSearchState = {
 export const searchProduct = createAsyncThunk(
   "productSearch/searchProduct",
   async (
-    paramaters: {
+    parameters: {
       keywords: string | undefined;
       nextPage: number | string;
       pageSize: number | string;
     },
     thunkAPI
   ) => {
-    let url = `http://123.56.149.216:8080/api/touristRoutes?pageNumber=${paramaters.nextPage}&pageSize=${paramaters.pageSize}`;
-    if (paramaters.keywords) {
-      url += `&keyword=${paramaters.keywords}`;
+    let url = `http://123.56.149.216:8080/api/touristRoutes?pageNumber=${parameters.nextPage}&pageSize=${parameters.pageSize}`;
+    if (parameters.keywords) {
+      url += `&keyword=${parameters.keywords}`;
     }
     console.log(url);
     const response = await axios.get("search");
