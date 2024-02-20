@@ -54,8 +54,8 @@ export function Header() {
             {language === "zh" ? "中文" : "English"}
           </Dropdown.Button>
           <Button.Group className={styles["button-group"]}>
-            <Button onClick={() => navigate("register")}> {t("header.register")}</Button>
-            <Button onClick={() => navigate("signIn")}>{t("header.signin")}</Button>
+            <Button onClick={() => navigate("/register")}> {t("header.register")}</Button>
+            <Button onClick={() => navigate("/signIn")}>{t("header.signin")}</Button>
           </Button.Group>
         </div>
       </div>
