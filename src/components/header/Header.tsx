@@ -1,9 +1,13 @@
-import React from 'react'
-import styles from './Header.module.css'
-import logo from '../../assets/logo.svg';
+import React, { useState, useEffect } from "react";
+import styles from "./Header.module.css";
+import logo from "../../assets/logo.svg";
 import { Layout, Typography, Input, Menu, Button, Dropdown } from "antd";
 import { GlobalOutlined } from "@ant-design/icons";
-import { useNavigate } from "react-router-dom";
+import {
+  useNavigate,
+  useLocation,
+  useParams,
+} from "react-router-dom";
 import { useSelector } from "../../redux/hooks";
 import { useDispatch } from "react-redux";
 import { Dispatch } from "redux";
@@ -13,14 +17,35 @@ import {
   changeLanguageActionCreator,
 } from "../../redux/language/languageActions";
 import { useTranslation } from "react-i18next";
+import { jwtDecode, JwtPayload as DefaultJwtPayload } from "jwt-decode";
+import { userSlice } from "../../redux/user/slice";
 
-export function Header() {
-  const navigate = useNavigate();
+interface JwtPayload extends DefaultJwtPayload {
+  username: string
+}
+
+export const Header: React.FC = () => {
+  const location = useLocation();
+  const params = useParams();
+  //const match = useRouteMatch();
   const language = useSelector((state) => state.language.language);
   const languageList = useSelector((state) => state.language.languageList);
-  //const dispatch = useDispatch();
-  const dispatch = useDispatch<Dispatch<LanguageActionTypes>>();
+
+  const dispatch = useDispatch<any>();
+  const navigate = useNavigate();
+
+  // const dispatch = useDispatch<Dispatch<LanguageActionTypes>>();
   const { t } = useTranslation();
+
+  const jwt = useSelector(s => s.user.token)
+  const [username, setUsername] = useState("")
+
+  useEffect(() => {
+    if (jwt) {
+      const token = jwtDecode<JwtPayload>(jwt)
+      setUsername(token.username)
+    }
+  }, [jwt])
 
   const menuClickHandler = (e) => {
     console.log(e);
@@ -32,8 +57,14 @@ export function Header() {
     }
   };
 
+  const onLogout = () => {
+    dispatch(userSlice.actions.logOut())
+    navigate("/")
+  }
+
   return (
     <div className={styles["app-header"]}>
+      {/* top-header */}
       <div className={styles["top-header"]}>
         <div className={styles.inner}>
           <Typography.Text>{t("header.slogan")}</Typography.Text>
@@ -53,10 +84,25 @@ export function Header() {
           >
             {language === "zh" ? "中文" : "English"}
           </Dropdown.Button>
-          <Button.Group className={styles["button-group"]}>
-            <Button onClick={() => navigate("/register")}> {t("header.register")}</Button>
-            <Button onClick={() => navigate("/signIn")}>{t("header.signin")}</Button>
-          </Button.Group>
+          {jwt ? (
+            <Button.Group className={styles["button-group"]}>
+              <span>
+                {t("header.welcome")}
+                <Typography.Text strong>{username}</Typography.Text>
+              </span>
+              <Button>{t("header.shoppingCart")}</Button>
+              <Button onClick={onLogout}>{t("header.signOut")}</Button>
+            </Button.Group>
+          ) : (
+            <Button.Group className={styles["button-group"]}>
+              <Button onClick={() => navigate("/register")}>
+                {t("header.register")}
+              </Button>
+              <Button onClick={() => navigate("/signIn")}>
+                {t("header.signin")}
+              </Button>
+            </Button.Group>
+          )}
         </div>
       </div>
       <Layout.Header className={styles["main-header"]}>

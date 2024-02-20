@@ -4,12 +4,14 @@ import { actionLog } from "./middlewares/actionLog";
 import { productDetailSlice } from "./productDetail/slice";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { productSearchSlice } from "./productSearch/slice";
+import { userSlice } from "./user/slice";
 
 const rootReducer = combineReducers({
   language: languageReducer,
   recommendProducts: recommendProductsReducer,
   productDetail: productDetailSlice.reducer,
-    productSearch: productSearchSlice.reducer
+  productSearch: productSearchSlice.reducer,
+  user: userSlice.reducer,
 });
 
 const store = configureStore({
