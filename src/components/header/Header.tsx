@@ -3,19 +3,10 @@ import styles from "./Header.module.css";
 import logo from "../../assets/logo.svg";
 import { Layout, Typography, Input, Menu, Button, Dropdown } from "antd";
 import { GlobalOutlined } from "@ant-design/icons";
-import {
-  useNavigate,
-  useLocation,
-  useParams,
-} from "react-router-dom";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 import { useSelector } from "../../redux/hooks";
 import { useDispatch } from "react-redux";
-import { Dispatch } from "redux";
-import {
-  LanguageActionTypes,
-  addLanguageActionCreator,
-  changeLanguageActionCreator,
-} from "../../redux/language/languageActions";
+import { addLanguageActionCreator, changeLanguageActionCreator } from "../../redux/language/languageActions";
 import { useTranslation } from "react-i18next";
 import { jwtDecode, JwtPayload as DefaultJwtPayload } from "jwt-decode";
 import { userSlice } from "../../redux/user/slice";
@@ -25,25 +16,25 @@ interface JwtPayload extends DefaultJwtPayload {
 }
 
 export const Header: React.FC = () => {
-  const location = useLocation();
-  const params = useParams();
-  //const match = useRouteMatch();
   const language = useSelector((state) => state.language.language);
   const languageList = useSelector((state) => state.language.languageList);
+  const jwt = useSelector((state) => state.user.token);
 
+  const [username, setUsername] = useState("")
+
+  const location = useLocation();
+  const params = useParams();
   const dispatch = useDispatch<any>();
   const navigate = useNavigate();
-
-  // const dispatch = useDispatch<Dispatch<LanguageActionTypes>>();
   const { t } = useTranslation();
-
-  const jwt = useSelector(s => s.user.token)
-  const [username, setUsername] = useState("")
 
   useEffect(() => {
     if (jwt) {
-      const token = jwtDecode<JwtPayload>(jwt)
-      setUsername(token.username)
+      // fake jwt, do not decode
+      console.log(jwt);
+      setUsername(jwt)
+      //const token = jwtDecode<JwtPayload>(jwt)
+      //setUsername(token.username)
     }
   }, [jwt])
 

@@ -1,6 +1,5 @@
-import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { stat } from "fs";
 
 interface UserState {
   loading: boolean;
@@ -23,10 +22,13 @@ export const signIn = createAsyncThunk(
     },
     thunkAPI
   ) => {
-    const { data } = await axios.post(`http://123.56.149.216:8080/auth/login`, {
-      email: parameters.email,
-      password: parameters.password,
-    });
+    // fake sigin
+    // const { data } = await axios.post(`http://123.56.149.216:8080/auth/login`, {
+    //   email: parameters.email,
+    //   password: parameters.password,
+    // });
+    const { data } = await axios.get("sigin");
+    console.log(data);
     return data.token;
   }
 );
