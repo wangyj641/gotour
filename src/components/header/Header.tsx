@@ -57,44 +57,44 @@ export const Header: React.FC = () => {
     <div className={styles["app-header"]}>
       {/* top-header */}
       <div className={styles["top-header"]}>
-        <div className={styles.inner}>
-          <Typography.Text>{t("header.slogan")}</Typography.Text>
-          <Dropdown.Button
-            style={{ marginLeft: 15 }}
-            overlay={
-              <Menu onClick={menuClickHandler}>
-                {languageList.map((l) => {
-                  return <Menu.Item key={l.code}>{l.name}</Menu.Item>;
-                })}
-                <Menu.Item key={"new"}>
-                  {t("header.add_new_language")}
-                </Menu.Item>
-              </Menu>
-            }
-            icon={<GlobalOutlined />}
-          >
-            {language === "zh" ? "中文" : "English"}
-          </Dropdown.Button>
-          {jwt ? (
+        <Typography.Text>{t("header.slogan")}</Typography.Text>
+        <Dropdown.Button
+          style={{ marginLeft: 15 }}
+          overlay={
+            <Menu onClick={menuClickHandler}>
+              {languageList.map((l) => {
+                return <Menu.Item key={l.code}>{l.name}</Menu.Item>;
+              })}
+              <Menu.Item key={"new"}>
+                {t("header.add_new_language")}
+              </Menu.Item>
+            </Menu>
+          }
+          icon={<GlobalOutlined />}
+        >
+          {language === "zh" ? "中文" : "English"}
+        </Dropdown.Button>
+        {jwt ? (
+          <div className={styles["top-user"]}>
+            <span>
+              {t("header.welcome")}
+              <Typography.Text strong>{username}</Typography.Text>
+            </span>
             <Button.Group className={styles["button-group"]}>
-              <span>
-                {t("header.welcome")}
-                <Typography.Text strong>{username}</Typography.Text>
-              </span>
               <Button>{t("header.shoppingCart")}</Button>
               <Button onClick={onLogout}>{t("header.signOut")}</Button>
             </Button.Group>
-          ) : (
-            <Button.Group className={styles["button-group"]}>
-              <Button onClick={() => navigate("/register")}>
-                {t("header.register")}
-              </Button>
-              <Button onClick={() => navigate("/signIn")}>
-                {t("header.signin")}
-              </Button>
-            </Button.Group>
-          )}
-        </div>
+          </div>
+        ) : (
+          <Button.Group className={styles["button-group"]}>
+            <Button onClick={() => navigate("/register")}>
+              {t("header.register")}
+            </Button>
+            <Button onClick={() => navigate("/signIn")}>
+              {t("header.signin")}
+            </Button>
+          </Button.Group>
+        )}
       </div>
       <Layout.Header className={styles["main-header"]}>
         <span onClick={() => navigate("/")}>
