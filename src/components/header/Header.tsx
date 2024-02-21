@@ -19,6 +19,8 @@ export const Header: React.FC = () => {
   const language = useSelector((state) => state.language.language);
   const languageList = useSelector((state) => state.language.languageList);
   const jwt = useSelector((state) => state.user.token);
+  const shoppingCartItems = useSelector(s => s.shoppingCart.items)
+  const shoppingCartLoading = useSelector(s => s.shoppingCart.loading)
 
   const [username, setUsername] = useState("")
 
@@ -81,8 +83,10 @@ export const Header: React.FC = () => {
               <Typography.Text strong>{username}</Typography.Text>
             </span>
             <Button.Group className={styles["button-group"]}>
-              <Button onClick={() => navigate("/shoppingCart")}>
-                {t("header.shoppingCart")}
+              <Button
+                loading={shoppingCartLoading}
+                onClick={() => navigate("/shoppingCart")}>
+                {t("header.shoppingCart")}({shoppingCartItems.length})
               </Button>
               <Button onClick={onLogout}>{t("header.signOut")}</Button>
             </Button.Group>

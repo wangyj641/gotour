@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from "react";
 import styles from "./App.module.css";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import {
@@ -11,6 +11,8 @@ import {
 } from "./pages";
 import { Navigate } from "react-router-dom";
 import { useSelector } from "./redux/hooks";
+import { useDispatch } from "react-redux";
+import { getShoppingCart } from "./redux/shoppingCart/slice";
 
 const PrivateRoute = ({ user, children }) => {
   if (!user) {
@@ -20,9 +22,16 @@ const PrivateRoute = ({ user, children }) => {
   return children;
 };
 
-
 function App() {
   const jwt = useSelector((s) => s.user.token);
+  const dispatch = useDispatch<any>();
+
+  useEffect(() => {
+    if (jwt) {
+      dispatch(getShoppingCart(jwt));
+    }
+  }, [jwt]);
+
   return (
     <div className={styles.App}>
       <BrowserRouter>
@@ -33,6 +42,7 @@ function App() {
           <Route path="/detail/:touristRouteId" element={<DetailPage />} />
           <Route path="/search/:keywords?" element={<SearchPage />} />
 
+          // protect route, only signed user can link this url
           <Route path="/shoppingCart"
             element={
               <PrivateRoute user={jwt}>
