@@ -76,7 +76,7 @@ export const Header: React.FC = () => {
         </Dropdown.Button>
         {jwt ? (
           <div className={styles["top-user"]}>
-            <span>
+            <span className={styles["user_info"]}>
               {t("header.welcome")}
               <Typography.Text strong>{username}</Typography.Text>
             </span>

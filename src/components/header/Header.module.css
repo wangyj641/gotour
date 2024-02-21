@@ -15,7 +15,10 @@
   .top-user {
     display: flex;
     flex-direction: row;
-    height: 40px;
+  }
+
+  .user_info {
+    min-width: 220px;
   }
   
   .button-group {
