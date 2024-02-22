@@ -8,6 +8,7 @@ import {
   DetailPage,
   SearchPage,
   ShoppingCartPage,
+  PlaceOrderPage
 } from "./pages";
 import { Navigate } from "react-router-dom";
 import { useSelector } from "./redux/hooks";
@@ -47,6 +48,14 @@ function App() {
             element={
               <PrivateRoute user={jwt}>
                 <ShoppingCartPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route path="/placeOrder"
+            element={
+              <PrivateRoute user={jwt}>
+                <PlaceOrderPage />
               </PrivateRoute>
             }
           />
