@@ -455,5 +455,30 @@
         ]
       }
     ]
+  },
+  "checkout": {
+    "orderItems": [
+      {
+        "id": 1,
+        "originalPrice": "13990",
+        "price": "11990",
+        "touristRoute": {
+          "title": "埃及阿斯旺+卢克索+红海Red Sea+开罗+亚历山大12日跟团游(5钻)"
+        }
+      }
+    ]
+  },
+  "placeOrder": {
+    "state": "Completed",
+    "orderItems": [
+      {
+        "id": 1,
+        "originalPrice": "13990",
+        "price": "11990",
+        "touristRoute": {
+          "title": "埃及阿斯旺+卢克索+红海Red Sea+开罗+亚历山大12日跟团游(5钻)"
+        }
+      }
+    ]
   }
 }

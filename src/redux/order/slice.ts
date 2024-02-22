@@ -17,15 +17,8 @@ const initialState: OrderState = {
 export const placeOrder = createAsyncThunk(
   "order/placeOrder",
   async (parameters: { jwt: string; orderId: string }, thunkAPI) => {
-    const { data } = await axios.post(
-      `http://123.56.149.216:8080/api/orders/${parameters.orderId}/placeOrder`,
-      null,
-      {
-        headers: {
-          Authorization: `bearer ${parameters.jwt}`,
-        },
-      }
-    );
+    const { data } = await axios.get("placeOrder");
+    console.log(data);
     return data;
   }
 );

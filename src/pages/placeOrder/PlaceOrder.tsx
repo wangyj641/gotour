@@ -12,6 +12,8 @@ export const PlaceOrderPage: React.FC = (props) => {
   const order = useSelector((s) => s.order.currentOrder);
   const dispatch = useDispatch<any>();
 
+  console.log(order);
+
   return (
     <MainLayout>
       <Row>
