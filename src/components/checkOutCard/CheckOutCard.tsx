@@ -37,7 +37,6 @@ export const CheckOutCard: React.FC<PropsType> = ({
   order,
   onCheckout,
 }) => {
-  //const history = useHistory();
   const navigate = useNavigate();
 
   const paymentData: OrderItem[] = order
