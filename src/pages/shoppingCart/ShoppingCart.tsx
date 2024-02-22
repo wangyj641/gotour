@@ -12,7 +12,6 @@ export const ShoppingCartPage: React.FC = (props) => {
   const loading = useSelector(s => s.shoppingCart.loading)
   const shoppingCartItems = useSelector(s => s.shoppingCart.items)
   const jwt = useSelector(s => s.user.token) as string
-  //const dispatch = useDispatch()
   const dispatch = useDispatch<any>();
 
   return (
@@ -21,7 +20,7 @@ export const ShoppingCartPage: React.FC = (props) => {
         {/* ????? */}
         <Col span={16}>
           <div className={styles["product-list-container"]}>
-            <ProductList data={shoppingCartItems.map((s) => s.touristRoute)} />
+            <ProductList data={shoppingCartItems} />
           </div>
         </Col>
         {/* ????? */}

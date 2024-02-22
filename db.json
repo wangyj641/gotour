@@ -434,5 +434,26 @@
   },
   "sigin": {
     "token": "to_wyj@126.com"
+  },
+  "shoppingCart": {
+    "shoppingCartItems": [
+      {
+        "touristRoute": "12333333333333333333",
+        "id": 1,
+        "title": "埃及阿斯旺+卢克索+红海Red Sea+开罗+亚历山大12日跟团游(5钻)·【官方旗舰明星纯玩团】25人封顶|含签证小费全程餐|3晚尼罗河游轮+3晚红海全包度假村+1晚底比斯古都|升级内陆飞机|优质中文导游队伍|七大神庙+赠项目",
+        "description": "ssssssssss",
+        "coupons": "100",
+        "originalPrice": "13990",
+        "discountPresent": 0.8,
+        "points": "100",
+        "price": "11990",
+        "rating": "4.5",
+        "touristRoutePictures": [
+          {
+            "url": "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg"
+          }
+        ]
+      }
+    ]
   }
 }

@@ -16,14 +16,11 @@ const initialState: ShoppingCarttate = {
 export const getShoppingCart = createAsyncThunk(
   "shoppingCart/getShoppingCart",
   async (jwt: string, thunkAPI) => {
-    const { data } = await axios.get(
-      `http://123.56.149.216:8080/api/shoppingCart`,
-      {
-        headers: {
-          Authorization: `bearer ${jwt}`,
-        },
-      }
-    );
+    const { data } = await axios.get("shoppingCart", {
+      headers: {
+        Authorization: `bearer ${jwt}`,
+      },
+    });
     return data.shoppingCartItems;
   }
 );
