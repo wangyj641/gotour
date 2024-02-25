@@ -1,16 +1,13 @@
-import styles from "./SearchPage.module.css";
 import React, { useEffect } from "react";
-import { FilterArea, ProductList } from "../../components";
-import { useParams, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
 import { Spin } from "antd";
+
+import styles from "./SearchPage.module.css";
+import { FilterArea, ProductList } from "../../components";
 import { searchProduct } from "../../redux/productSearch/slice";
 import { useSelector } from "../../redux/hooks";
-import { useDispatch } from "react-redux";
 import { MainLayout } from "../../layouts/mainLayout";
-
-interface MatchParams {
-  keywords: string;
-}
 
 export const SearchPage: React.FC = () => {
   const { keywords } = useParams();
@@ -21,11 +18,10 @@ export const SearchPage: React.FC = () => {
   const productList = useSelector((state) => state.productSearch.data);
 
   const dispatch = useDispatch<any>();
-  const location = useLocation();
 
   useEffect(() => {
     dispatch(searchProduct({ nextPage: 1, pageSize: 10, keywords }))
-  }, [location])
+  }, [keywords])
 
   const onPageChange = (nextPage, pageSize) => {
     dispatch(searchProduct({ nextPage, pageSize, keywords }))

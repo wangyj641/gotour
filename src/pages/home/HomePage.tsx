@@ -6,15 +6,15 @@ import {
   BusinessPartners,
 } from "../../components";
 import { Row, Col, Typography, Spin } from "antd";
-import sideImage from "../../assets/images/sider_2019_12-09.png";
-import sideImage2 from "../../assets/images/sider_2019_02-04.png";
-import sideImage3 from "../../assets/images/sider_2019_02-04-2.png";
-//import styles from "./HomePage.module.css";
 import { withTranslation, WithTranslation } from "react-i18next";
 import { connect } from "react-redux";
+
 import { RootState } from "../../redux/store";
 import { giveMeDataActionCreator } from "../../redux/recommendProducts/recommendProductsActions";
 import { MainLayout } from "../../layouts/mainLayout";
+import sideImage from "../../assets/images/sider_2019_12-09.png";
+import sideImage2 from "../../assets/images/sider_2019_02-04.png";
+import sideImage3 from "../../assets/images/sider_2019_02-04-2.png";
 
 const mapStateToProps = (state: RootState) => {
   return {
