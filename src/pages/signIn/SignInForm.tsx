@@ -1,10 +1,11 @@
-import styles from "./SignInForm.module.css";
-import { Form, Input, Button, Checkbox } from "antd";
-import { signIn } from "../../redux/user/slice";
-import { useDispatch } from "react-redux";
-import { useSelector } from "../../redux/hooks";
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { Form, Input, Button, Checkbox } from "antd";
+
+import styles from "./SignInForm.module.css";
+import { useSelector } from "../../redux/hooks";
+import { signIn } from "../../redux/user/slice";
 
 const layout = {
   labelCol: { span: 8 },
