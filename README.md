@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Xiecheng: A Tour Web App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+Developed with react.js, antd, json-server.
 
 ## Available Scripts
 
