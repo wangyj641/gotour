@@ -4,7 +4,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Developed with react.js, antd, json-server.
 
-[screenshot.jpg]
+
+![screenshot]
+
+[screenshot]: public/screenshot.jpg
+
 
 
 ## Available Scripts
