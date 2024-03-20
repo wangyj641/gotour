@@ -6,7 +6,7 @@ Developed with react.js, antd, json-server.
 
 ![screenshot]
 
-[screenshot]: public/album.png
+[screenshot]: public/screenshot.jpg
 
 
 ## Available Scripts
