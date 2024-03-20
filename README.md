@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Developed with react.js, antd, json-server.
 
-![Uploading image.png…]()
+[screenshot.jpg]
 
 
 ## Available Scripts
