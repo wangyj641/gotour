@@ -1,8 +1,11 @@
-# Xiecheng: A Tour Web App
+# Xiecheng: A Travel Website
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Developed with react.js, antd, json-server.
+
+![Uploading image.png…]()
+
 
 ## Available Scripts
 
