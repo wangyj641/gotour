@@ -1,22 +1,36 @@
-# Xiecheng: A Travel Website
+# XIECHENG
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A Travel Website
 
 Developed with react.js, antd, json-server.
 
+### Key Features:
+
+- View product list
+- View a specific product detail
+- Add a product to shopping cart
+- Checkout the cart
+- Login a account
+- Register a user
+- Logout a account
+- Place an order
+- View orders
+- Payment online
+
+
 ![screenshot](public/screenshot.jpg)
 
-## Available Scripts
 
-In the project directory, you can run:
+## Getting Started
 
-strat json-server:
+Start json-server:
+```shell
+json-server --watch .\db.json --port 5000
+```
 
-### `json-server --watch .\db.json --port 5000`
+Start app
+```shell
+npm start
+```
 
-start app:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
