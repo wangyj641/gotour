@@ -24,7 +24,6 @@
 - View orders
 - Payment online
 
-
 ![screenshot](public/screenshot.jpg)
 
 
