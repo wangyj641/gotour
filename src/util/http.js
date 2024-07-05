@@ -4,7 +4,7 @@ import axios from 'axios'
 //axios.defaults.baseURL = "http://localhost:5000"
 
 // json-server vercel 
-axios.defaults.baseURL = "http://json-server-vercel-eta.vercel.app/api"
+axios.defaults.baseURL = "http://json-server-vercel-eta.vercel.app"
 
 // // Add a request interceptor
 // axios.interceptors.request.use(function (config) {
