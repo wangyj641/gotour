@@ -1,11 +1,10 @@
 import axios from 'axios'
-//import { store } from '../redux/store'
 
 //axios.defaults.headers
-axios.defaults.baseURL = "http://localhost:5000"
+//axios.defaults.baseURL = "http://localhost:5000"
 
-//axios.defaults.headers['x-icode'] = 'FB80558A73FA658E';
-
+// json-server vercel 
+axios.defaults.baseURL = "http://json-server-vercel-eta.vercel.app/api"
 
 
 // // Add a request interceptor
