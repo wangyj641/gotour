@@ -6,7 +6,6 @@ import axios from 'axios'
 // json-server vercel 
 axios.defaults.baseURL = "http://json-server-vercel-eta.vercel.app/api"
 
-
 // // Add a request interceptor
 // axios.interceptors.request.use(function (config) {
 //     // Do something before request is sent
