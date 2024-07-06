@@ -16,7 +16,7 @@ const initialState: ShoppingCarttate = {
 export const getShoppingCart = createAsyncThunk(
   "shoppingCart/getShoppingCart",
   async (jwt: string, thunkAPI) => {
-    const { data } = await axios.get("shoppingCart", {
+    const { data } = await axios.get("/shoppingCart", {
       headers: {
         Authorization: `bearer ${jwt}`,
       },
@@ -46,7 +46,7 @@ export const addShoppingCartItem = createAsyncThunk(
 export const checkout = createAsyncThunk(
   "shoppingCart/checkout",
   async (jwt: string, thunkAPI) => {
-    const { data } = await axios.get("checkout");
+    const { data } = await axios.get("/checkout");
     return data;
   }
 );

@@ -17,7 +17,7 @@ const initialState: OrderState = {
 export const placeOrder = createAsyncThunk(
   "order/placeOrder",
   async (parameters: { jwt: string; orderId: string }, thunkAPI) => {
-    const { data } = await axios.get("placeOrder");
+    const { data } = await axios.get("/placeOrder");
     console.log(data);
     return data;
   }

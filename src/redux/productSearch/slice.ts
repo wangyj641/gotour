@@ -30,7 +30,7 @@ export const searchProduct = createAsyncThunk(
       url += `&keyword=${parameters.keywords}`;
     }
     console.log(url);
-    const response = await axios.get("search");
+    const response = await axios.get("/search");
     console.log(response);
     return {
       data: response.data.data,

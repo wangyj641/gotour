@@ -22,12 +22,7 @@ export const signIn = createAsyncThunk(
     },
     thunkAPI
   ) => {
-    // fake sigin
-    // const { data } = await axios.post(`http://123.56.149.216:8080/auth/login`, {
-    //   email: parameters.email,
-    //   password: parameters.password,
-    // });
-    const { data } = await axios.get("sigin");
+    const { data } = await axios.get("/sigin");
     console.log(data);
     return data.token;
   }
