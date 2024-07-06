@@ -106,7 +106,14 @@ class HomePageComponent extends React.Component<PropsType> {
   }
 }
 
-export const HomePage = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withTranslation()(HomePageComponent));
+// export const HomePage = connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(withTranslation()(HomePageComponent));
+
+export const HomePage = () => {
+  return <div>
+    home
+  </div>;
+
+}
